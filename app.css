@@ -1,0 +1,54 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url(images/mari-carmen-del-valle-camara-578082-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: black;
+    color: white;
+}
+
+ul {
+    margin-right: 15%;
+}
+
+i {
+    color: white;
+}
+
+hr {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-collapse {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color:rgba(0, 0, 0, 0.5);
+    border-radius:0rem;
+}
+
+.navbar {
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.navbar-nav {
+    font-size: 1.1rem;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+}
+
+.navbar.scrolled {
+    background: #24292e;
+    transition: background 500ms;
+}
+
+#club {
+    margin-top: 250px;
+}
+
+#club li {
+    list-style: none;
+}

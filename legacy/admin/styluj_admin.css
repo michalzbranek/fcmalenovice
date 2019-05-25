@@ -1,0 +1,23 @@
+input,textarea{
+  border:1px solid black;
+}
+body{
+  text-align:center;
+}
+table{
+  vertical-align:center;
+  table-layout:auto;
+  border:2px white;
+  border-collapse:collapse;
+}
+th{
+  width:200px;
+  text-align:center;
+  vertical-align:center;
+  border:5px white;
+}
+td{
+  text-align:center;
+  vertical-align:center;
+  border:5px white;
+}
