@@ -28,7 +28,11 @@ hr {
     border-radius:0rem;
 }
 
-.navbar {
+.card {
+    
+}
+
+.navbar.navbar-expand-xl {
     background-color:rgba(0, 0, 0, 0.5);
 }
 
@@ -45,10 +49,11 @@ hr {
     transition: background 500ms;
 }
 
-#club {
+#gallery {
+    color: black;
     margin-top: 250px;
 }
 
-#club li {
-    list-style: none;
+.light {
+    background-color: white;
 }
