@@ -50,4 +50,7 @@ hr {
 #background{
     background: url(images/mari-carmen-del-valle-camara-578082-unsplash.jpg);
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
