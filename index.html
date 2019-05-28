@@ -12,34 +12,30 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
   <body>
-    <nav id="mainNavbar" class="navbar navbar-expand-xl navbar-dark sticky-top font-weight-bold border-bottom border-dark">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">FC MALENOVICE</a>
+    <div id="background">
+    <nav id="mainNavbar" class="navbar navbar-expand-xl navbar-light sticky-top font-weight-bold">
+        <a class="navbar-brand ml-5" href="index.html">FC MALENOVICE</a>
         <button class="navbar-toggler d-xl-none border-0" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse justify-content-end navbar-collapse py-xl-3" id="collapsibleNavId">
+        <div class="collapse justify-content-end navbar-collapse py-xl-5" id="collapsibleNavId">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">TABULKY</a>
+              <a class="nav-link text-body" href="#gallery">FOTOGALERIE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">SOUPISKA</a>
+              <a class="nav-link text-body" href="#">TABULKA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#gallery">FOTOGALERIE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#club">O KLUBU</a>
+              <a class="nav-link text-body" href="#club">O KLUBU</a>
             </li>
             <li class="nav-item d-inline d-xl-none">
-              <a class="nav-link" href="https://www.facebook.com/fotbalmalenovice/" target="_blank">FACEBOOK</a>
+              <a class="nav-link text-body" href="https://www.facebook.com/fotbalmalenovice/" target="_blank">FACEBOOK</a>
             </li>
           </ul>
         </div>
         <a class="mr-4 d-none d-xl-block" href="https://www.facebook.com/fotbalmalenovice/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-      </div>
     </nav>
 
     <section class="container jumbotron">
@@ -55,8 +51,8 @@
             Abychom nezapomněli, tak Petr Páleníček ukazuje, že i ve svém zlatém věku, zkompletovat 
             hattrick dvakrát za sebou po sobě jdoucích zápasech není pro něj žádný problém.</p>
     </section>
-
-    <section id="gallery" class="light">
+  </div>
+    <section id="gallery">
       <div class="container py-5 text-center">
         <h2 class="mb-5">Fotogalerie</h2>
         <div class="card-columns">
@@ -78,53 +74,53 @@
     <section id="club">
       <div class="container py-5 text-center">
         <h2>O klubu</h2>
-      
-        <nav class="navbar navbar-expand navbar-dark font-weight-bold justify-content-center py-3 text-uppercase">
-            <ul class="navbar-nav">
-              <li class="nav-item border-right px-3">
-                <a class="nav-link" href="#tab_1">Základní informace</a>
-              </li>
-              <li class="nav-item border-right px-3">
-                <a class="nav-link" href="#tab_2">Složení výboru FC Malenovice</a>
-              </li>
-              <li class="nav-item px-3">
-                <a class="nav-link" href="#tab_3">Historie</a>
-              </li>
-            </ul>
-        </nav>
-      
-        <div id="tab1">
-          Název klubu: Fotbalový klub Malenovice<br>
-          Adresa klubu: Tyršova, 763 02 Zlín 4<br>
-          Založení klubu: 1932<br>
-          Barvy klubu: modrá, bílá, červená<br><br>
-        </div>    
-      
-        <div id="tab2">
-          Trenér A mužstva: Ivo Malota<br>
-          Trenér dorostu: Zdeněk Gistr<br>
-          Trenér žáků: Radoslav Střelec<br>
-          Trenér přípravky: Radoslav Střelec<br>
-          Manažer a viceprezident: Vladislav Hamrla<br>
-          Správce hřiště a metodik mládeže: František Zálešák<br>
-          Hlavní postranní rozhodčí: Petr Bůžek<br>
-          Vedoucí klubu: Zdeněk Vichorec<br><br>
-        </div>
-      
-        <div id="tab3">
-          <p>První krok k založení fotbalového klubu v Malenovicích se uskutečnil schůzí milovníků fotbalu v bývalém hostinci Podskalí
-          , který ležel pod hradem v roce 1932. Karel Mrlík, Jaroslav Plšek a Vojtěch Číhal získali na ředitelství malenovického 
-          velkostatku dohodu o pronájmu pozemku v cihelnách nad starým hřbitovem pro provedení úprav na hřiště pro kopanou. Z příspěvků
-          prvních členů se nakoupily dresy, a tak nově vzniklo mužstvo, které nemělo ani vlastní hřiště, ale mohlo vyjíždět k prvním
-          přátelským utkáním do širokého okolí. Složení: Benešovský, Němec, Khýr, Číhal, Landsfeld, Jiřík ml., Jiří k st., Plšek, Strojil, Mrlík, Mal.</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <nav class="navbar navbar-expand font-weight-bold text-uppercase">
+                <ul class="navbar-nav flex-column border-0">
+                  <li class="nav-item pb-3">
+                    <a class="nav-link active text-white" data-toggle="tab" href="#tab1">Základní informace</a>
+                  </li>
+                  <li class="nav-item pb-3">
+                    <a class="nav-link text-white" data-toggle="tab" href="#tab2">Složení výboru FC Malenovice</a>
+                  </li>
+                  <li class="nav-item pb-3">
+                    <a class="nav-link text-white" data-toggle="tab" href="#tab3">Historie</a>
+                  </li>
+                </ul>
+            </nav>
+          </div>
+          <div class="col-lg-6">
+            <div class="tab-content">
+              <div id="tab1" class="container tab-pane active"><br>
+                Název klubu: Fotbalový klub Malenovice<br>
+              Adresa klubu: Tyršova, 763 02 Zlín 4<br>
+              Založení klubu: 1932<br>
+              Barvy klubu: modrá, bílá, červená<br><br>
+              </div>
+              <div id="tab2" class="container tab-pane fade"><br>
+                Trenér A mužstva: Ivo Malota<br>
+              Trenér dorostu: Zdeněk Gistr<br>
+              Trenér žáků: Radoslav Střelec<br>
+              Trenér přípravky: Radoslav Střelec<br>
+              Manažer a viceprezident: Vladislav Hamrla<br>
+              Správce hřiště a metodik mládeže: František Zálešák<br>
+              Hlavní postranní rozhodčí: Petr Bůžek<br>
+              Vedoucí klubu: Zdeněk Vichorec<br><br>
+              </div>
+              <div id="tab3" class="container tab-pane fade"><br>
+                <p>První krok k založení fotbalového klubu v Malenovicích se uskutečnil schůzí milovníků fotbalu v bývalém hostinci Podskalí
+                , který ležel pod hradem v roce 1932. Karel Mrlík, Jaroslav Plšek a Vojtěch Číhal získali na ředitelství malenovického 
+                velkostatku dohodu o pronájmu pozemku v cihelnách nad starým hřbitovem pro provedení úprav na hřiště pro kopanou. Z příspěvků
+                prvních členů se nakoupily dresy, a tak nově vzniklo mužstvo, které nemělo ani vlastní hřiště, ale mohlo vyjíždět k prvním
+                přátelským utkáním do širokého okolí. Složení: Benešovský, Němec, Khýr, Číhal, Landsfeld, Jiřík ml., Jiří k st., Plšek, Strojil, Mrlík, Mal.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- <button onclick="myFunction()">Click Me</button>
-
-    <div id="myDIV">Hello</div> -->
-  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -133,18 +129,10 @@
         $(document).scroll(function() {
           var $nav = $("#mainNavbar");
           $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+          var $navbar = $("#collapsibleNavId");
+          $navbar.toggleClass("py-xl-5", $(this).scrollTop() < $nav.height());
         })
       })
-    </script>
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myDIV");
-        if (x.innerHTML === "Hello") {
-          x.innerHTML = "Swapped text!";
-        } else {
-          x.innerHTML = "Hello";
-        }
-      }
     </script>
   </body>
 </html>
