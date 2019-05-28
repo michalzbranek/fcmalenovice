@@ -1,6 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    
 }
 
 ul {
@@ -11,12 +10,12 @@ i {
     color: black;
 }
 
-i.scrolled {
-    color: white;
-}
-
 hr {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+i.scrolled {
+    color: white;
 }
 
 .navbar-collapse {
@@ -26,6 +25,8 @@ hr {
 .jumbotron {
     background-color:rgba(0, 0, 0, 0);
     border-radius:0rem;
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 .navbar-brand {
@@ -52,5 +53,4 @@ hr {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
