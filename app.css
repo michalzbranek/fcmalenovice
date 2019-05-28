@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -36,6 +40,10 @@ i.scrolled {
 .navbar.scrolled {
     background: #24292e;
     transition: background 500ms;
+}
+
+.card-img-top {
+    height: 200px;
 }
 
 #gallery {
