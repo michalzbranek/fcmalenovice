@@ -11,6 +11,10 @@ i {
     color: black;
 }
 
+i.scrolled {
+    color: white;
+}
+
 hr {
     background-color: rgba(0, 0, 0, 0.1);
 }
