@@ -6,12 +6,42 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.navbar-brand {
+    font-family: 'Russo One', sans-serif;
+}
+
+.navbar-nav {
+    font-family: 'Russo One', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Russo One', sans-serif;
+}
+
+a:hover {
+    color: white;
+}
+
+nav .navbar-nav li a:hover {
+    color: grey !important;
+    border-radius: 5px;
+}
+
 ul {
     margin-right: 15%;
 }
 
 i {
     color: black;
+    border-radius: 5px;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    padding: 12px 0px 0px 0px;
+}
+
+i:hover {
+    color: grey;
 }
 
 hr {
@@ -30,31 +60,20 @@ i.scrolled {
     background-color:rgba(0, 0, 0, 0);
     border-radius:0rem;
     padding-top: 200px;
-    padding-bottom: 200px;
 }
 
 .navbar-brand {
     font-size: 1.8rem;
 }
 
-.navbar.scrolled {
-    background: #24292e;
-    transition: background 500ms;
-}
-
 #gallery {
-    color: black;
-    background-color: white;
+    background-color: rgb(240, 240, 240);
 }
 
 #club {
-    background-color: #24292e;
-    color: white;
+    background-color: rgb(240, 240, 240);
 }
 
-#background{
-    background: url(images/mari-carmen-del-valle-camara-578082-unsplash.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#mainNavbar { 
+    background-color: rgb(240, 240, 240);
 }

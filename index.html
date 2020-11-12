@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>FC Malenovice</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
@@ -13,32 +14,31 @@
 </head>
 
 <body>
-  <div id="background" class="pb-5">
-    <nav id="mainNavbar" class="navbar navbar-expand-xl navbar-light fixed-top font-weight-bold">
-      <a class="navbar-brand ml-5" href="index.html">FC MALENOVICE</a>
+  <div id="background">
+    <nav id="mainNavbar" class="navbar navbar-expand-xl navbar-light fixed-top">
+      <a class="navbar-brand ml-5" href="index.html"><span style = "font-size: 2rem;">FC MALENOVICE</span></a>
       <button class="navbar-toggler d-xl-none border-0" type="button" data-toggle="collapse"
         data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse justify-content-end navbar-collapse py-xl-5" id="collapsibleNavId">
+      <div class="collapse justify-content-end navbar-collapse py-xl-3" id="collapsibleNavId">
         <ul class="navbar-nav mr-5">
           <li class="nav-item">
             <a class="nav-link text-body" href="#gallery">FOTOGALERIE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-body" href="#tablesection">TABULKA</a>
+            <a class="nav-link text-body" href="#club">O KLUBU</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-body" href="#club">O KLUBU</a>
+            <a class="nav-link text-body" href="#tablesection">TABULKA</a>
           </li>
           <li class="nav-item d-inline d-xl-none">
             <a class="nav-link text-body" href="https://www.facebook.com/fotbalmalenovice/" target="_blank">FACEBOOK</a>
           </li>
         </ul>
       </div>
-      <a class="mr-4 d-none d-xl-block" href="https://www.facebook.com/fotbalmalenovice/" target="_blank"><i
-          class="fab fa-facebook fa-2x"></i></a>
+      <a class="mr-4 d-none d-xl-block" href="https://www.facebook.com/fotbalmalenovice/" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a>
     </nav>
 
     <section class="container jumbotron">
@@ -87,13 +87,13 @@
           <nav class="navbar navbar-expand font-weight-bold text-uppercase">
             <ul class="nav navbar-nav flex-column border-0">
               <li class="nav-item pb-3">
-                <a class="nav-link active text-white" data-toggle="tab" href="#tab1">Základní informace</a>
+                <a class="nav-link active text-reset" data-toggle="tab" href="#tab1">Základní informace</a>
               </li>
               <li class="nav-item pb-3">
-                <a class="nav-link text-white" data-toggle="tab" href="#tab2">Složení výboru FC Malenovice</a>
+                <a class="nav-link text-reset" data-toggle="tab" href="#tab2">Složení výboru FC Malenovice</a>
               </li>
               <li class="nav-item pb-3">
-                <a class="nav-link text-white" data-toggle="tab" href="#tab3">Historie</a>
+                <a class="nav-link text-reset" data-toggle="tab" href="#tab3">Historie</a>
               </li>
             </ul>
           </nav>
@@ -136,7 +136,7 @@
   
   <section id="tablesection" class="text-center container py-5">
     <h2>Tabulka</h2>
-    <table class="table table-striped table-dark table-hover">
+    <table class="table table-striped table-light table-hover">
         <thead>
           <tr>
             <th>#</th>
@@ -325,22 +325,16 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-      $(function () {
-        $(document).scroll(function() {
-          var $nav = $("#mainNavbar");
-          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-          var $navlinks = $(".nav-link");
-          $navlinks.toggleClass("text-body", $(this).scrollTop() < $nav.height());
-          $navlinks.toggleClass("text-white", $(this).scrollTop() > $nav.height());
-          var $facebook = $(".fa-facebook");
-          $facebook.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-          var $navbar = $("#collapsibleNavId");
-          $navbar.toggleClass("py-xl-5", $(this).scrollTop() < $nav.height());
-          var $brand = $(".navbar-brand");
-          $brand.toggleClass("text-white", $(this).scrollTop() > $nav.height());
-        })
-      })
-    </script>
+  
+    <footer class="footer text-center pb-2 pt-3 pt-md-4 mt-5" style="background-color: rgb(240, 240, 240);">
+      <div class="container-fluid">
+          <div style="font-family: 'Russo One', sans-serif;">
+              Created by 
+              <a href="mailto:michal.zbranek.1@gmail.com" style="color: black; text-decoration: underline;">Michal Zbranek</a>
+              <p>© 2020 All rights reserved</p>
+          </div>
+      </div>
+  </footer>
+  
   </body>
 </html>
