@@ -14,9 +14,9 @@
 </head>
 
 <body>
-  <div id="background">
+  <div class="container">
     <nav id="mainNavbar" class="navbar navbar-expand-xl navbar-light fixed-top">
-      <a class="navbar-brand ml-5" href="index.html"><span style = "font-size: 2rem;">FC MALENOVICE</span></a>
+      <a id="navbarBrand" class="navbar-brand ml-5" href="index.html"><span style = "font-size: 2rem;">FC MALENOVICE</span></a>
       <button class="navbar-toggler d-xl-none border-0" type="button" data-toggle="collapse"
         data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -24,6 +24,9 @@
       </button>
       <div class="collapse justify-content-end navbar-collapse py-xl-3" id="collapsibleNavId">
         <ul class="navbar-nav mr-5">
+          <li class="nav-item">
+            <a class="nav-link text-body" href="#score">VÝSLEDEK</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link text-body" href="#gallery">FOTOGALERIE</a>
           </li>
@@ -41,7 +44,7 @@
       <a class="mr-4 d-none d-xl-block" href="https://www.facebook.com/fotbalmalenovice/" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a>
     </nav>
 
-    <section class="container jumbotron">
+    <section id="score" class="jumbotron">
       <h1 class="display-3">FC Malenovice - Veselá 3:0 (2:0)</h1>
       <p class="lead">Střelci: Páleníček Petr - hattrick</p>
       <hr class="my-4">
@@ -56,35 +59,44 @@
     </section>
   </div>
 
-  <section id="gallery">
-    <div class="container py-5 text-center">
-      <h2 class="mb-5">Fotogalerie</h2>
-      <div class="row justify-content-around">
-      <div class="card col-lg-3 col-sm-6 p-0 mx-5 mx-sm-0">
-          <a href="images/36151_1458935712249_3277041_n.jpg" target="_blank">
-            <img src="images/36151_1458935712249_3277041_n.jpg" class="card-img-top">
-          </a>
+  <div id="blabla">
+  <div class="container">
+    <section id="gallery">
+          <h2 id="gallery" style="color: #EEFBFB;" class="text-center">Fotogalerie</h2><br>
+        <!--Grid row-->
+      <div class="row">
+      
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+          <img src="images/1669853_286303778195283_813797452_o.jpg" class="img-fluid mb-4">
+          <img src="images/logo.png" class="img-fluid mb-4">
+        </div>
+        <!--Grid column-->
+      
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img src="images/18813253_840766809415641_8778874901364856325_n.jpg" class="img-fluid mb-4">
+          <img src="images/sala3.bmp" class="img-fluid mb-4">
+        </div>
+        <!--Grid column-->
+      
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img src="images/36151_1458935712249_3277041_n.jpg" class="img-fluid mb-4">
+          <img src="images/11053080_456261317866194_5855701841118786605_o.jpg" class="img-fluid mb-4">
+        </div>
+        <!--Grid column-->
+      
       </div>
-      <div class="card col-lg-3 col-sm-6 p-0 mx-5 mx-sm-0">
-        <a href="images/11053080_456261317866194_5855701841118786605_o.jpg" target="_blank">
-          <img src="images/11053080_456261317866194_5855701841118786605_o.jpg" class="card-img-top">
-        </a>
-      </div>
-      <div class="card col-lg-3 col-sm-6 p-0 mx-5 mx-sm-0">
-        <a href="images/1669853_286303778195283_813797452_o.jpg" target="_blank">
-          <img src="images/1669853_286303778195283_813797452_o.jpg" class="card-img-top">
-        </a>
-      </div>
-      </div>
-    </div>
-  </section>
+      <!--Grid row-->
+    </section>
 
   <section id="club">
-    <div class="container py-5">
-      <h2 class="text-center">O klubu</h2>
+    <div class="py-5">
+      <h2 class="text-center">O klubu</h2><br>
       <div class="row">
         <div class="col-lg-6">
-          <nav class="navbar navbar-expand font-weight-bold text-uppercase">
+          <nav class="navbar navbar-expand text-uppercase">
             <ul class="nav navbar-nav flex-column border-0">
               <li class="nav-item pb-3">
                 <a class="nav-link active text-reset" data-toggle="tab" href="#tab1">Základní informace</a>
@@ -133,10 +145,13 @@
       </div>
     </div>
   </section>
-  
+  </div>
+  </div>
+
+  <div class="container">
   <section id="tablesection" class="text-center container py-5">
-    <h2>Tabulka</h2>
-    <table class="table table-striped table-light table-hover">
+    <h2>Tabulka</h2><br>
+    <table class="table table-sm table-light">
         <thead>
           <tr>
             <th>#</th>
@@ -321,20 +336,21 @@
         </tr>
       </table>
     </section>
-    
+
+  </div>
+  <footer class="footer text-center pb-2 pt-3 pt-md-4" style="background-color: #0062A1; color: #EEFBFB;">
+    <div class="container-fluid">
+        <div style="font-family: 'Russo One', sans-serif;">
+            Created by 
+            <a id="createdBy" href="mailto:michal.zbranek.1@gmail.com" style="color: #EEFBFB; text-decoration: underline;">Michal Zbranek</a>
+            <p>© 2021 All rights reserved</p>
+        </div>
+    </div>
+</footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
-    <footer class="footer text-center pb-2 pt-3 pt-md-4 mt-5" style="background-color: rgb(240, 240, 240);">
-      <div class="container-fluid">
-          <div style="font-family: 'Russo One', sans-serif;">
-              Created by 
-              <a href="mailto:michal.zbranek.1@gmail.com" style="color: black; text-decoration: underline;">Michal Zbranek</a>
-              <p>© 2020 All rights reserved</p>
-          </div>
-      </div>
-  </footer>
-  
+
   </body>
 </html>

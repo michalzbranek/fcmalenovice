@@ -19,12 +19,16 @@ h2, h3, h4, h5, h6 {
 }
 
 a:hover {
-    color: white;
+    color: #DB241C;
 }
 
 nav .navbar-nav li a:hover {
-    color: grey !important;
+    color: #DB241C !important;
     border-radius: 5px;
+}
+
+nav .navbar-nav li a {
+    color: #EEFBFB !important;
 }
 
 ul {
@@ -32,7 +36,7 @@ ul {
 }
 
 i {
-    color: black;
+    color: #EEFBFB;
     border-radius: 5px;
     text-align: center;
     height: 60px;
@@ -41,15 +45,15 @@ i {
 }
 
 i:hover {
-    color: grey;
+    color: #DB241C;
 }
 
 hr {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: black !important;
 }
 
 i.scrolled {
-    color: white;
+    color: #EEFBFB;
 }
 
 .navbar-collapse {
@@ -57,23 +61,46 @@ i.scrolled {
 }
 
 .jumbotron {
-    background-color:rgba(0, 0, 0, 0);
+    background-color:white;
     border-radius:0rem;
     padding-top: 200px;
 }
 
 .navbar-brand {
     font-size: 1.8rem;
-}
-
-#gallery {
-    background-color: rgb(240, 240, 240);
-}
-
-#club {
-    background-color: rgb(240, 240, 240);
+    color: #EEFBFB !important;
 }
 
 #mainNavbar { 
-    background-color: rgb(240, 240, 240);
+    background-color: #0062A1;
+}
+
+#navbarBrand:hover {
+    color: #DB241C !important;
+}
+
+#createdBy:hover {
+    color: #DB241C !important;
+}
+
+#club nav .navbar-nav li a {
+    color: #EEFBFB !important;
+}
+
+#club nav .navbar-nav li a:hover {
+    color: #DB241C !important;
+}
+
+#gallery {
+    background-color: #0062A1;
+    padding-top: 30px;
+}
+
+#club {
+    background-color: #0062A1;
+    color: #EEFBFB;
+}
+
+#blabla {
+    background-color: #0062A1;
 }
