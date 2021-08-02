@@ -23,7 +23,7 @@ a:hover {
 }
 
 nav .navbar-nav li a:hover {
-    color: #DB241C !important;
+    background-color: #DB241C !important;
     border-radius: 5px;
 }
 
@@ -41,11 +41,11 @@ i {
     text-align: center;
     height: 60px;
     width: 60px;
-    padding: 12px 0px 0px 0px;
+    padding: 6px 12px 12px 12px;
 }
 
 i:hover {
-    color: #DB241C;
+    background-color: #DB241C;
 }
 
 hr {
@@ -75,12 +75,9 @@ i.scrolled {
     background-color: #0062A1;
 }
 
-#navbarBrand:hover {
-    color: #DB241C !important;
-}
-
 #createdBy:hover {
-    color: #DB241C !important;
+    background-color: #DB241C !important;
+    border-radius: 5px;
 }
 
 #club nav .navbar-nav li a {
@@ -103,4 +100,12 @@ i.scrolled {
 
 #blabla {
     background-color: #0062A1;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #DB241C !important;
+}
+
+.nav-link {
+    color: white !important;
 }
