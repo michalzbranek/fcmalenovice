@@ -14,7 +14,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 // @ts-ignore: Object is possibly 'null'.
 import { Gallery } from "react-grid-gallery";
@@ -27,14 +27,22 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import firstImage from "/1.jpg";
 import secondImage from "/2.jpg";
 import thirdImage from "/3.jpg";
-import fourthImage from "/4.jpg";
 import fifthImage from "/5.jpg";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-const navItems = ["DOMŮ", "VÝSLEDEK", "FOTOGALERIE", "O KLUBU", "TABULKA"];
+const navItems = [
+  { name: "DOMŮ", value: "home" },
+  { name: "VÝSLEDEK", value: "result" },
+  { name: "FOTOGALERIE", value: "gallery" },
+  { name: "TABULKA", value: "table" },
+  { name: "O KLUBU", value: "club" },
+];
 const drawerWidth = 240;
 const images = [
   {
@@ -50,30 +58,41 @@ const images = [
     thumbnail: thirdImage,
   },
   {
-    original: fourthImage,
-    thumbnail: fourthImage,
-  },
-  {
     original: fifthImage,
     thumbnail: fifthImage,
   },
 ];
+
 function createData(
+  ranking: number,
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number
+  z: number,
+  v: number,
+  r: number,
+  p: number,
+  s: number,
+  b: number,
+  pPlus: number,
+  pMinus: number
 ) {
-  return { name, calories, fat, carbs, protein };
+  return { ranking, name, z, v, r, p, s, b, pPlus, pMinus };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData(1, "Fryšták", 23, 20, 0, 3, 93 - 21, 59, 3, 2),
+  createData(2, "Mladcová", 23, 17, 0, 6, 48 - 19, 51, 2, 2),
+  createData(3, "Tečovice", 23, 16, 0, 7, 43 - 26, 46, 3, 1),
+  createData(4, "Admira Hulín", 23, 15, 0, 8, 51 - 42, 44, 3, 2),
+  createData(5, "Holešov B", 23, 13, 0, 10, 61 - 48, 38, 2, 1),
+  createData(6, "Veselá", 23, 12, 0, 11, 49 - 48, 37, 0, 1),
+  createData(7, "Lužkovice", 23, 10, 0, 13, 38 - 40, 32, 2, 4),
+  createData(8, "Jaroslavice", 23, 10, 0, 13, 33 - 37, 32, 2, 4),
+  createData(9, "Chropyně", 23, 12, 0, 11, 39 - 54, 32, 4, 0),
+  createData(10, "Malenovice", 23, 10, 0, 13, 39 - 55, 30, 2, 2),
+  createData(11, "Příluky", 23, 9, 0, 14, 33 - 53, 25, 3, 1),
+  createData(12, "Louky", 23, 7, 0, 16, 37 - 48, 24, 0, 3),
+  createData(13, "Slavkov pH", 23, 6, 0, 17, 42 - 50, 20, 0, 2),
+  createData(14, "Kostelec u Hol", 23, 4, 0, 19, 30 - 95, 13, 0, 1),
 ];
 
 interface Props {
@@ -87,17 +106,22 @@ interface Props {
 function Bar(props: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { window } = props;
+  const homeRef = useRef(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  // @ts-ignore: Object is possibly 'null'.
+  const executeScroll = () => homeRef.current.scrollIntoView();
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.value} disablePadding>
             <ListItemButton
+              onClick={executeScroll}
               sx={{
                 textAlign: "center",
                 ":hover": {
@@ -107,7 +131,7 @@ function Bar(props: Props) {
               }}
             >
               <ListItemText>
-                <Typography fontFamily={"Russo One"}>{item}</Typography>
+                <Typography fontFamily={"Russo One"}>{item.name}</Typography>
               </ListItemText>
             </ListItemButton>
           </ListItem>
@@ -130,7 +154,8 @@ function Bar(props: Props) {
             edge="start"
             onClick={handleDrawerToggle}
             sx={{
-              mr: 2,
+              mr: 3,
+              pl: 3,
               display: { sm: "none" },
             }}
           >
@@ -144,8 +169,8 @@ function Bar(props: Props) {
             sx={{
               flexGrow: 1,
               display: { xs: "flex", sm: "block" },
-              flexDirection: "row-reverse",
               ml: 6,
+              pr: 0,
             }}
           >
             FC MALENOVICE
@@ -157,7 +182,7 @@ function Bar(props: Props) {
           >
             {navItems.map((item) => (
               <Button
-                key={item}
+                key={item.value}
                 sx={{
                   color: "#fff",
                   ":hover": {
@@ -166,7 +191,7 @@ function Bar(props: Props) {
                 }}
               >
                 <Typography fontSize={20} fontFamily={"Russo One"}>
-                  {item}
+                  {item.name}
                 </Typography>
               </Button>
             ))}
@@ -226,44 +251,178 @@ function Bar(props: Props) {
           sx={{ color: "white" }}
           py={5}
         >
-          Fotogalerie
+          FOTOGALERIE
         </Typography>
         <Container>
           {" "}
-          <ImageGallery items={images} />
+          <ImageGallery
+            items={images}
+            showPlayButton={false}
+            showFullscreenButton={false}
+          />
         </Container>
       </Box>
-      <Container>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Dessert (100g serving)</TableCell>
-                <TableCell align="right">Calories</TableCell>
-                <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                <TableCell align="right">Protein&nbsp;(g)</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row">
-                    {row.name}
-                  </TableCell>
-                  <TableCell align="right">{row.calories}</TableCell>
-                  <TableCell align="right">{row.fat}</TableCell>
-                  <TableCell align="right">{row.carbs}</TableCell>
-                  <TableCell align="right">{row.protein}</TableCell>
+      <Box pb={10}>
+        <Typography align="center" fontFamily={"Russo One"} variant="h4" py={5}>
+          TABULKA
+        </Typography>
+        <Container>
+          <TableContainer>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell>#</TableCell>
+                  <TableCell>Klub</TableCell>
+                  <TableCell>Z</TableCell>
+                  <TableCell>V</TableCell>
+                  <TableCell>R</TableCell>
+                  <TableCell>P</TableCell>
+                  <TableCell>S</TableCell>
+                  <TableCell>B</TableCell>
+                  <TableCell>P+</TableCell>
+                  <TableCell>P-</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Container>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow key={row.name}>
+                    <TableCell>{row.ranking}</TableCell>
+                    <TableCell>{row.name}</TableCell>
+                    <TableCell>{row.z}</TableCell>
+                    <TableCell>{row.v}</TableCell>
+                    <TableCell>{row.r}</TableCell>
+                    <TableCell>{row.p}</TableCell>
+                    <TableCell>{row.s}</TableCell>
+                    <TableCell>{row.b}</TableCell>
+                    <TableCell>{row.pPlus}</TableCell>
+                    <TableCell>{row.pMinus}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Container>
+      </Box>
+      <div ref="club"></div>
+      <Box sx={{ backgroundColor: "#0062A1", py: 5 }}>
+        <Typography
+          align="center"
+          fontFamily={"Russo One"}
+          variant="h4"
+          sx={{ color: "white" }}
+          py={5}
+        >
+          O KLUBU
+        </Typography>
+        <Container>
+          <Accordion
+            defaultExpanded
+            sx={{
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
+              <Typography fontFamily={"Russo One"}>
+                ZÁKLADNÍ INFORMACE
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <ul>
+                  <li>Název klubu: Fotbalový klub Malenovice</li>
+                  <li>Adresa klubu: Tyršova, 763 02 Zlín 4</li>
+                  <li>Založení klubu: 1932</li>
+                  <li>Barvy klubu: modrá, bílá, červená</li>
+                </ul>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            defaultExpanded
+            sx={{
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
+              <Typography fontFamily={"Russo One"}>
+                SLOŽENÍ VÝBORU FC MALENOVICE
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <ul>
+                  <li>Trenér A mužstva: Ivo Malota</li>
+                  <li>Trenér dorostu: Zdeněk Gistr</li>
+                  <li>Trenér žáků: Radoslav Střelec</li>
+                  <li>Trenér přípravky: Radoslav Střelec</li>
+                  <li>Manažer a viceprezident: Vladislav Hamrla</li>
+                  <li>Správce hřiště a metodik mládeže: František Zálešák</li>
+                  <li>Hlavní postranní rozhodčí: Petr Bůžek</li>
+                  <li>Vedoucí klubu: Zdeněk Vichorec</li>
+                </ul>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            defaultExpanded
+            sx={{
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
+              <Typography fontFamily={"Russo One"}>HISTORIE</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                První krok k založení fotbalového klubu v Malenovicích se
+                uskutečnil schůzí milovníků fotbalu v bývalém hostinci Podskalí
+                , který ležel pod hradem v roce 1932. Karel Mrlík, Jaroslav
+                Plšek a Vojtěch Číhal získali na ředitelství malenovického
+                velkostatku dohodu o pronájmu pozemku v cihelnách nad starým
+                hřbitovem pro provedení úprav na hřiště pro kopanou. Z příspěvků
+                prvních členů se nakoupily dresy, a tak nově vzniklo mužstvo,
+                které nemělo ani vlastní hřiště, ale mohlo vyjíždět k prvním
+                přátelským utkáním do širokého okolí. Složení:
+                <ul>
+                  <li>Benešovský</li>
+                  <li>Němec</li>
+                  <li>Khýr</li>
+                  <li>Číhal</li>
+                  <li>Landsfeld</li>
+                  <li>Jiřík ml.</li>
+                  <li>Jiří k st.</li>
+                  <li>Plšek</li>
+                  <li>Strojil</li>
+                  <li>Mrlík</li>
+                  <li>Mal.</li>
+                </ul>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Container>
+      </Box>
+      <Box
+        sx={{
+          backgroundColor: "white",
+          py: 5,
+        }}
+      >
+        <Typography fontFamily={"Russo One"} align="center">
+          Created by Michal Zbranek
+        </Typography>
+        <Typography fontFamily={"Russo One"} align="center">
+          © 2024 All rights reserved
+        </Typography>
+      </Box>
     </Box>
   );
 }
