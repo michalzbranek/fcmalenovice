@@ -28,25 +28,34 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import firstImage from "/1.jpg";
+import secondImage from "/2.jpg";
+import thirdImage from "/3.jpg";
+import fourthImage from "/4.jpg";
+import fifthImage from "/5.jpg";
 
 const navItems = ["DOMŮ", "VÝSLEDEK", "FOTOGALERIE", "O KLUBU", "TABULKA"];
 const drawerWidth = 240;
 const images = [
   {
-    original: "src/assets/1669853_286303778195283_813797452_o.jpg",
-    thumbnail: "src/assets/1669853_286303778195283_813797452_o.jpg",
+    original: firstImage,
+    thumbnail: firstImage,
   },
   {
-    original: "src/assets/18813253_840766809415641_8778874901364856325_n.jpg",
-    thumbnail: "src/assets/18813253_840766809415641_8778874901364856325_n.jpg",
+    original: secondImage,
+    thumbnail: secondImage,
   },
   {
-    original: "src/assets/36151_1458935712249_3277041_n.jpg",
-    thumbnail: "src/assets/36151_1458935712249_3277041_n.jpg",
+    original: thirdImage,
+    thumbnail: thirdImage,
   },
   {
-    original: "src/assets/11053080_456261317866194_5855701841118786605_o.jpg",
-    thumbnail: "src/assets/11053080_456261317866194_5855701841118786605_o.jpg",
+    original: fourthImage,
+    thumbnail: fourthImage,
+  },
+  {
+    original: fifthImage,
+    thumbnail: fifthImage,
   },
 ];
 function createData(
