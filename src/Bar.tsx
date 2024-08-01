@@ -36,13 +36,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-const navItems = [
-  { name: "DOMŮ", value: "home" },
-  { name: "VÝSLEDEK", value: "result" },
-  { name: "FOTOGALERIE", value: "gallery" },
-  { name: "TABULKA", value: "table" },
-  { name: "O KLUBU", value: "club" },
-];
 const drawerWidth = 240;
 const images = [
   {
@@ -107,35 +100,118 @@ function Bar(props: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { window } = props;
   const homeRef = useRef(null);
+  const clubRef = useRef(null);
+  const galleryRef = useRef(null);
+  const resultRef = useRef(null);
+  const tableRef = useRef(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // @ts-ignore: Object is possibly 'null'.
-  const executeScroll = () => homeRef.current.scrollIntoView();
+  const scrollToHome = () =>
+    // @ts-ignore: Object is possibly 'null'.
+    homeRef.current.scrollIntoView({ behavior: "smooth" });
+
+  const scrollToTable = () =>
+    // @ts-ignore: Object is possibly 'null'.
+    tableRef.current.scrollIntoView({ behavior: "smooth" });
+
+  const scrollToResult = () =>
+    // @ts-ignore: Object is possibly 'null'.
+    resultRef.current.scrollIntoView({ behavior: "smooth" });
+
+  const scrollToGallery = () =>
+    // @ts-ignore: Object is possibly 'null'.
+    galleryRef.current.scrollIntoView({ behavior: "smooth" });
+
+  const scrollToClub = () =>
+    // @ts-ignore: Object is possibly 'null'.
+    clubRef.current.scrollIntoView({ behavior: "smooth" });
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item.value} disablePadding>
-            <ListItemButton
-              onClick={executeScroll}
-              sx={{
-                textAlign: "center",
-                ":hover": {
-                  backgroundColor: "red",
-                  color: "white",
-                },
-              }}
-            >
-              <ListItemText>
-                <Typography fontFamily={"Russo One"}>{item.name}</Typography>
-              </ListItemText>
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={scrollToHome}
+            sx={{
+              textAlign: "center",
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <ListItemText>
+              <Typography fontFamily={"Russo One"}>DOMŮ</Typography>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={scrollToResult}
+            sx={{
+              textAlign: "center",
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <ListItemText>
+              <Typography fontFamily={"Russo One"}>VÝSLEDEK</Typography>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={scrollToGallery}
+            sx={{
+              textAlign: "center",
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <ListItemText>
+              <Typography fontFamily={"Russo One"}>FOTOGALERIE</Typography>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={scrollToTable}
+            sx={{
+              textAlign: "center",
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <ListItemText>
+              <Typography fontFamily={"Russo One"}>TABULKA</Typography>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={scrollToClub}
+            sx={{
+              textAlign: "center",
+              ":hover": {
+                backgroundColor: "red",
+                color: "white",
+              },
+            }}
+          >
+            <ListItemText>
+              <Typography fontFamily={"Russo One"}>O KLUBU</Typography>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -169,7 +245,7 @@ function Bar(props: Props) {
             sx={{
               flexGrow: 1,
               display: { xs: "flex", sm: "block" },
-              ml: 6,
+              ml: 0,
               pr: 0,
             }}
           >
@@ -180,21 +256,71 @@ function Bar(props: Props) {
               display: { xs: "none", sm: "block" },
             }}
           >
-            {navItems.map((item) => (
-              <Button
-                key={item.value}
-                sx={{
-                  color: "#fff",
-                  ":hover": {
-                    backgroundColor: "red",
-                  },
-                }}
-              >
-                <Typography fontSize={20} fontFamily={"Russo One"}>
-                  {item.name}
-                </Typography>
-              </Button>
-            ))}
+            <Button
+              onClick={scrollToHome}
+              sx={{
+                color: "#fff",
+                ":hover": {
+                  backgroundColor: "red",
+                },
+              }}
+            >
+              <Typography fontSize={20} fontFamily={"Russo One"}>
+                DOMŮ{" "}
+              </Typography>
+            </Button>
+            <Button
+              onClick={scrollToResult}
+              sx={{
+                color: "#fff",
+                ":hover": {
+                  backgroundColor: "red",
+                },
+              }}
+            >
+              <Typography fontSize={20} fontFamily={"Russo One"}>
+                VÝSLEDEK{" "}
+              </Typography>
+            </Button>
+            <Button
+              onClick={scrollToGallery}
+              sx={{
+                color: "#fff",
+                ":hover": {
+                  backgroundColor: "red",
+                },
+              }}
+            >
+              <Typography fontSize={20} fontFamily={"Russo One"}>
+                FOTOGALERIE{" "}
+              </Typography>
+            </Button>
+            <Button
+              onClick={scrollToTable}
+              sx={{
+                color: "#fff",
+                ":hover": {
+                  backgroundColor: "red",
+                },
+              }}
+            >
+              <Typography fontSize={20} fontFamily={"Russo One"}>
+                TABULKA
+              </Typography>
+            </Button>
+            <Button
+              onClick={scrollToClub}
+              sx={{
+                color: "#fff",
+                ":hover": {
+                  backgroundColor: "red",
+                },
+              }}
+            >
+              <Typography fontSize={20} fontFamily={"Russo One"}>
+                O KLUBU
+              </Typography>
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
@@ -218,6 +344,8 @@ function Bar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
+      <div ref={homeRef}></div>
+      <div ref={resultRef}></div>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Container sx={{ py: 10 }}>
@@ -243,6 +371,7 @@ function Bar(props: Props) {
           </Typography>
         </Container>
       </Box>
+      <div ref={galleryRef}></div>
       <Box sx={{ backgroundColor: "#0062A1", py: 5 }}>
         <Typography
           align="center"
@@ -262,6 +391,7 @@ function Bar(props: Props) {
           />
         </Container>
       </Box>
+      <div ref={tableRef}></div>
       <Box pb={10}>
         <Typography align="center" fontFamily={"Russo One"} variant="h4" py={5}>
           TABULKA
@@ -303,7 +433,7 @@ function Bar(props: Props) {
           </TableContainer>
         </Container>
       </Box>
-      <div ref="club"></div>
+      <div ref={clubRef}></div>
       <Box sx={{ backgroundColor: "#0062A1", py: 5 }}>
         <Typography
           align="center"
