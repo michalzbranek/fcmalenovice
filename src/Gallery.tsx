@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
-import "react-image-gallery/styles/css/image-gallery.css";
-// @ts-ignore: Object is possibly 'null'.
-import ImageGallery from "react-image-gallery";
+import 'photoswipe/dist/photoswipe.css'
+import { Gallery as PhotoSwipeGallery, Item } from 'react-photoswipe-gallery'
+
 
 // @ts-ignore: Object is possibly 'null'.
 function Gallery({ images }) {
@@ -17,12 +17,22 @@ function Gallery({ images }) {
         FOTOGALERIE
       </Typography>
       <Container>
-        {" "}
-        <ImageGallery
-          items={images}
-          showPlayButton={false}
-          showFullscreenButton={false}
-        />
+      <PhotoSwipeGallery>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridGap: '1rem' }}>
+      {images.map((image: any, index: number) => (
+            <Item
+                key={index}
+                original={image.original}
+                width="1024"
+                height="768"
+            >
+                {({ ref, open }) => (
+                <img ref={ref} onClick={open} src={image.original} style={{ width: '100%', height: 'auto', cursor: 'pointer' }}/>
+                )}
+            </Item>
+        ))}
+        </div>
+    </PhotoSwipeGallery>
       </Container>
     </Box>
   );

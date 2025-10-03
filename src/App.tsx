@@ -15,19 +15,23 @@ const drawerWidth = 240;
 const images = [
   {
     original: firstImage,
-    thumbnail: firstImage,
+    width: '1024',
+    height: '768'
   },
   {
     original: secondImage,
-    thumbnail: secondImage,
+    width: '1024',
+    height: '768'
   },
   {
     original: thirdImage,
-    thumbnail: thirdImage,
+    width: '1024',
+    height: '768'
   },
   {
     original: fifthImage,
-    thumbnail: fifthImage,
+    width: '1024',
+    height: '768'
   },
 ];
 
