@@ -2,17 +2,12 @@ import { Box, Typography } from "@mui/material";
 
 function Footer() {
   return (
-    <Box
-      sx={{
-        backgroundColor: "white",
-        py: 5,
-      }}
-    >
-      <Typography fontFamily={"Russo One"} align="center">
+    <Box className="bg-white py-8 border-t border-gray-100">
+      <Typography className="font-russo text-center text-gray-600 mb-2">
         Created by Michal Zbranek
       </Typography>
-      <Typography fontFamily={"Russo One"} align="center">
-        © 2024 All rights reserved
+      <Typography className="font-russo text-center text-gray-600 text-sm">
+        © 2025 All rights reserved
       </Typography>
     </Box>
   );

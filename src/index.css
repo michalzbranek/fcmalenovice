@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-club-blue: #0062A1;
+  --color-club-blue-light: #E3F2FD;
+  --color-club-red: #D32F2F;
+  --color-club-dark: #0D1B2A;
+  --color-club-light: #F0F4F8;
+  
+  --font-russo: "Russo One", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-club-light);
+  color: var(--color-club-dark);
+  font-family: var(--font-sans);
+}

@@ -1,9 +1,7 @@
 import {
   AppBar,
   Box,
-  Button,
   Drawer,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
@@ -11,7 +9,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 
 function Horizontal({
   // @ts-ignore: Object is possibly 'null'.
@@ -33,194 +30,65 @@ function Horizontal({
   // @ts-ignore: Object is possibly 'null'.
   scrollToClub,
 }) {
+  const navItems = [
+    { label: "DOMŮ", action: scrollToHome },
+    { label: "VÝSLEDEK", action: scrollToResult },
+    { label: "FOTOGALERIE", action: scrollToGallery },
+    { label: "TABULKA", action: scrollToTable },
+    { label: "O KLUBU", action: scrollToClub },
+  ];
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box onClick={handleDrawerToggle} className="text-center h-full bg-club-light">
+      <Typography variant="h6" className="my-4 font-russo text-club-blue">
+        FC MALENOVICE
+      </Typography>
       <List>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={scrollToHome}
-            sx={{
-              textAlign: "center",
-              ":hover": {
-                backgroundColor: "red",
-                color: "white",
-              },
-            }}
-          >
-            <ListItemText>
-              <Typography fontFamily={"Russo One"}>DOMŮ</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={scrollToResult}
-            sx={{
-              textAlign: "center",
-              ":hover": {
-                backgroundColor: "red",
-                color: "white",
-              },
-            }}
-          >
-            <ListItemText>
-              <Typography fontFamily={"Russo One"}>VÝSLEDEK</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={scrollToGallery}
-            sx={{
-              textAlign: "center",
-              ":hover": {
-                backgroundColor: "red",
-                color: "white",
-              },
-            }}
-          >
-            <ListItemText>
-              <Typography fontFamily={"Russo One"}>FOTOGALERIE</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={scrollToTable}
-            sx={{
-              textAlign: "center",
-              ":hover": {
-                backgroundColor: "red",
-                color: "white",
-              },
-            }}
-          >
-            <ListItemText>
-              <Typography fontFamily={"Russo One"}>TABULKA</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={scrollToClub}
-            sx={{
-              textAlign: "center",
-              ":hover": {
-                backgroundColor: "red",
-                color: "white",
-              },
-            }}
-          >
-            <ListItemText>
-              <Typography fontFamily={"Russo One"}>O KLUBU</Typography>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
+        {navItems.map((item) => (
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton
+              onClick={item.action}
+              className="text-center hover:bg-club-red hover:text-white transition-colors duration-300"
+            >
+              <ListItemText>
+                <span className="font-russo text-lg">{item.label}</span>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+        ))}
       </List>
     </Box>
   );
 
   return (
     <>
-      <AppBar sx={{ backgroundColor: "#0062A1", py: 2 }} component="nav">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{
-              mr: 3,
-              pl: 3,
-              display: { sm: "none" },
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            fontSize={30}
-            fontFamily={"Russo One"}
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", sm: "block" },
-              ml: 0,
-              pr: 0,
-            }}
+      <AppBar 
+        component="nav" 
+        position="sticky"
+        className="shadow-lg"
+        elevation={0}
+        sx={{ backgroundColor: '#0062A1' }}
+      >
+        <Toolbar className="justify-between container mx-auto px-4 py-2">
+          <div
+            className="font-russo text-2xl sm:text-3xl tracking-wider flex-grow sm:flex-grow-0 text-center sm:text-left"
           >
             FC MALENOVICE
-          </Typography>
-          <Box
-            sx={{
-              display: { xs: "none", sm: "block" },
-            }}
-          >
-            <Button
-              onClick={scrollToHome}
-              sx={{
-                color: "#fff",
-                ":hover": {
-                  backgroundColor: "red",
-                },
-              }}
-            >
-              <Typography fontSize={20} fontFamily={"Russo One"}>
-                DOMŮ{" "}
-              </Typography>
-            </Button>
-            <Button
-              onClick={scrollToResult}
-              sx={{
-                color: "#fff",
-                ":hover": {
-                  backgroundColor: "red",
-                },
-              }}
-            >
-              <Typography fontSize={20} fontFamily={"Russo One"}>
-                VÝSLEDEK{" "}
-              </Typography>
-            </Button>
-            <Button
-              onClick={scrollToGallery}
-              sx={{
-                color: "#fff",
-                ":hover": {
-                  backgroundColor: "red",
-                },
-              }}
-            >
-              <Typography fontSize={20} fontFamily={"Russo One"}>
-                FOTOGALERIE{" "}
-              </Typography>
-            </Button>
-            <Button
-              onClick={scrollToTable}
-              sx={{
-                color: "#fff",
-                ":hover": {
-                  backgroundColor: "red",
-                },
-              }}
-            >
-              <Typography fontSize={20} fontFamily={"Russo One"}>
-                TABULKA
-              </Typography>
-            </Button>
-            <Button
-              onClick={scrollToClub}
-              sx={{
-                color: "#fff",
-                ":hover": {
-                  backgroundColor: "red",
-                },
-              }}
-            >
-              <Typography fontSize={20} fontFamily={"Russo One"}>
-                O KLUBU
-              </Typography>
-            </Button>
+          </div>
+
+          <Box className="hidden sm:flex gap-6">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={item.action}
+                className="text-white hover:text-club-red transition-colors duration-300 relative group py-2"
+              >
+                <span className="font-russo text-lg tracking-wide">
+                  {item.label}
+                </span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-club-red transition-all duration-300 group-hover:w-full"></span>
+              </button>
+            ))}
           </Box>
         </Toolbar>
       </AppBar>

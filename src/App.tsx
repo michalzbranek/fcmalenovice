@@ -1,5 +1,5 @@
 import Horizontal from "./Horizontal";
-import { Box, CssBaseline } from "@mui/material";
+import { Box } from "@mui/material";
 import { useRef, useState } from "react";
 import firstImage from "/1.jpg";
 import secondImage from "/2.jpg";
@@ -78,11 +78,11 @@ interface Props {
 function App(props: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { window } = props;
-  const homeRef = useRef(null);
-  const clubRef = useRef(null);
-  const galleryRef = useRef(null);
-  const resultRef = useRef(null);
-  const tableRef = useRef(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const clubRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
+  const tableRef = useRef<HTMLDivElement>(null);
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -92,29 +92,23 @@ function App(props: Props) {
   };
 
   const scrollToHome = () =>
-    // @ts-ignore: Object is possibly 'null'.
-    homeRef.current.scrollIntoView({ behavior: "smooth" });
+    homeRef.current?.scrollIntoView({ behavior: "smooth" });
 
   const scrollToTable = () =>
-    // @ts-ignore: Object is possibly 'null'.
-    tableRef.current.scrollIntoView({ behavior: "smooth" });
+    tableRef.current?.scrollIntoView({ behavior: "smooth" });
 
   const scrollToResult = () =>
-    // @ts-ignore: Object is possibly 'null'.
-    resultRef.current.scrollIntoView({ behavior: "smooth" });
+    resultRef.current?.scrollIntoView({ behavior: "smooth" });
 
   const scrollToGallery = () =>
-    // @ts-ignore: Object is possibly 'null'.
-    galleryRef.current.scrollIntoView({ behavior: "smooth" });
+    galleryRef.current?.scrollIntoView({ behavior: "smooth" });
 
   const scrollToClub = () =>
-    // @ts-ignore: Object is possibly 'null'.
-    clubRef.current.scrollIntoView({ behavior: "smooth" });
+    clubRef.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <Box>
+    <Box className="min-h-screen bg-club-light font-sans">
       <div ref={homeRef}></div>
-      <CssBaseline />
       <Horizontal
         container={container}
         mobileOpen={mobileOpen}
@@ -126,13 +120,13 @@ function App(props: Props) {
         scrollToGallery={() => scrollToGallery()}
         scrollToClub={() => scrollToClub()}
       />
-      <div ref={resultRef}></div>
+      <div ref={resultRef} className="scroll-mt-20"></div>
       <Result />
-      <div ref={galleryRef}></div>
+      <div ref={galleryRef} className="scroll-mt-20"></div>
       <Gallery images={images} />
-      <div ref={tableRef}></div>
+      <div ref={tableRef} className="scroll-mt-20"></div>
       <CurrentTable rows={rows} />
-      <div ref={clubRef}></div>
+      <div ref={clubRef} className="scroll-mt-20"></div>
       <Club />
       <Footer />
     </Box>
