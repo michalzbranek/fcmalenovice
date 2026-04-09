@@ -24,12 +24,14 @@
     "react-photoswipe-gallery": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/generator": "^7.28.3",
+    "@babel/types": "^7.28.4",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
-    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.22",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
