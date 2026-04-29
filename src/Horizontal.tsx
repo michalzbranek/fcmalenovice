@@ -60,8 +60,8 @@ function Horizontal({
 
   return (
     <>
-      <AppBar 
-        component="nav" 
+      <AppBar
+        component="nav"
         position="sticky"
         className="shadow-lg"
         elevation={0}
@@ -88,12 +88,9 @@ function Horizontal({
               <button
                 key={item.label}
                 onClick={item.action}
-                className="text-white hover:text-club-red transition-colors duration-300 relative group py-2"
+                className="text-white hover:bg-club-red transition-colors duration-300 px-4 py-2 rounded-lg font-russo text-lg tracking-wide"
               >
-                <span className="font-russo text-lg tracking-wide">
-                  {item.label}
-                </span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-club-red transition-all duration-300 group-hover:w-full"></span>
+                {item.label}
               </button>
             ))}
           </Box>
