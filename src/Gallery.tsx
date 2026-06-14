@@ -2,12 +2,20 @@ import { Box, Container, Typography } from "@mui/material";
 import 'photoswipe/dist/photoswipe.css'
 import { Gallery as PhotoSwipeGallery, Item } from 'react-photoswipe-gallery'
 
+interface GalleryImage {
+  original: string;
+  width: string;
+  height: string;
+}
 
-// @ts-ignore: Object is possibly 'null'.
-function Gallery({ images }) {
+interface GalleryProps {
+  images: GalleryImage[];
+}
+
+function Gallery({ images }: GalleryProps) {
   return (
     <Box className="bg-club-blue py-16 text-white relative overflow-hidden">
-      
+
       <Typography
         align="center"
         variant="h4"
@@ -15,11 +23,11 @@ function Gallery({ images }) {
       >
         FOTOGALERIE
       </Typography>
-      
+
       <Container maxWidth="lg">
         <PhotoSwipeGallery>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {images.map((image: any, index: number) => (
+            {images.map((image, index) => (
               <Item
                 key={index}
                 original={image.original}
@@ -29,7 +37,7 @@ function Gallery({ images }) {
                 {({ ref, open }) => (
                   <div className="overflow-hidden rounded-xl shadow-lg group cursor-pointer aspect-video bg-gray-800">
                     <img
-                      ref={ref}
+                      ref={ref as React.Ref<HTMLImageElement>}
                       onClick={open}
                       src={image.original}
                       alt={`Gallery image ${index + 1}`}

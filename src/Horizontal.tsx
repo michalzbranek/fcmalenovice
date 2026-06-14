@@ -11,26 +11,29 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
+interface HorizontalProps {
+  container?: () => HTMLElement;
+  mobileOpen: boolean;
+  drawerWidth: number;
+  handleDrawerToggle: () => void;
+  scrollToHome: () => void;
+  scrollToTable: () => void;
+  scrollToResult: () => void;
+  scrollToGallery: () => void;
+  scrollToClub: () => void;
+}
+
 function Horizontal({
-  // @ts-ignore: Object is possibly 'null'.
   container,
-  // @ts-ignore: Object is possibly 'null'.
   mobileOpen,
-  // @ts-ignore: Object is possibly 'null'.
   drawerWidth,
-  // @ts-ignore: Object is possibly 'null'.
   handleDrawerToggle,
-  // @ts-ignore: Object is possibly 'null'.
   scrollToHome,
-  // @ts-ignore: Object is possibly 'null'.
   scrollToTable,
-  // @ts-ignore: Object is possibly 'null'.
   scrollToResult,
-  // @ts-ignore: Object is possibly 'null'.
   scrollToGallery,
-  // @ts-ignore: Object is possibly 'null'.
   scrollToClub,
-}) {
+}: HorizontalProps) {
   const navItems = [
     { label: "DOMŮ", action: scrollToHome },
     { label: "VÝSLEDEK", action: scrollToResult },

@@ -4,13 +4,29 @@ import {
   Typography,
 } from "@mui/material";
 
-// @ts-ignore: Object is possibly 'null'.
-function CurrentTable({ rows }) {
+interface Row {
+  ranking: number;
+  name: string;
+  z: number;
+  v: number;
+  r: number;
+  p: number;
+  s: number;
+  b: number;
+  pPlus: number;
+  pMinus: number;
+}
+
+interface CurrentTableProps {
+  rows: Row[];
+}
+
+function CurrentTable({ rows }: CurrentTableProps) {
   return (
     <Box className="py-16 bg-club-light">
-      <Typography 
-        align="center" 
-        variant="h4" 
+      <Typography
+        align="center"
+        variant="h4"
         className="font-russo text-4xl mb-10 text-club-dark pb-10"
       >
         TABULKA
@@ -34,9 +50,8 @@ function CurrentTable({ rows }) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {/* @ts-ignore: Object is possibly 'null'. */}
                 {rows.map((row, index) => (
-                  <tr 
+                  <tr
                     key={row.name}
                     className={`
                       hover:bg-club-blue-light transition-colors duration-150

@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
-    name: Build and Deploy
+  build:
+    name: Build & Test
     runs-on: ubuntu-latest
 
     steps:
@@ -16,9 +16,21 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Test
+        run: npm run test
 
       - name: Build project
         run: npm run build
