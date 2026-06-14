@@ -6,7 +6,7 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { ArrowDropDown as ArrowDropDownIcon } from "@mui/icons-material";
 
 function Club() {
   const accordionStyles = {

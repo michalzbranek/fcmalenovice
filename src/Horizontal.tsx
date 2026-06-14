@@ -9,7 +9,7 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Menu as MenuIcon } from "@mui/icons-material";
 
 function Horizontal({
   // @ts-ignore: Object is possibly 'null'.
