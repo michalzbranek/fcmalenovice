@@ -1,15 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FC MALENOVICE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FC MALENOVICE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- CSS-only mobile menu toggle -->
+<input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+<!-- Mobile drawer — must be a sibling of #nav-toggle for :checked ~ selector -->
+<div class="drawer">
+  <label for="nav-toggle" class="drawer-backdrop"></label>
+  <nav class="drawer-nav">
+    <a href="#domov" class="drawer-link">DOMŮ</a>
+    <a href="#vysledek" class="drawer-link">VÝSLEDEK</a>
+    <a href="#fotogalerie" class="drawer-link">FOTOGALERIE</a>
+    <a href="#tabulka" class="drawer-link">TABULKA</a>
+    <a href="#o-klubu" class="drawer-link">O KLUBU</a>
+  </nav>
+</div>
+
+<!-- Scroll-to-top anchor (DOMŮ target) -->
+<div id="domov"></div>
+
+<!-- Sticky header -->
+<header class="site-header">
+  <div class="header-inner">
+    <label for="nav-toggle" class="hamburger" aria-label="Otevřít menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </label>
+    <div class="site-title russo">FC MALENOVICE</div>
+    <nav class="nav-desktop" aria-label="Hlavní navigace">
+      <a href="#domov">DOMŮ</a>
+      <a href="#vysledek">VÝSLEDEK</a>
+      <a href="#fotogalerie">FOTOGALERIE</a>
+      <a href="#tabulka">TABULKA</a>
+      <a href="#o-klubu">O KLUBU</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── VÝSLEDEK ──────────────────────────────────────────── -->
+  <section id="vysledek" class="section-result">
+    <div class="container-md">
+      <div class="result-card">
+        <div class="result-header">
+          <h2 class="russo result-score">
+            FC Malenovice <span class="score-number">3:0</span> Veselá
+          </h2>
+          <p class="result-halftime">(2:0)</p>
+        </div>
+        <div class="result-body">
+          <div class="scorers-badge">
+            <p>⚽ Střelci: <strong class="scorer-name">Páleníček Petr</strong> - hattrick</p>
+          </div>
+          <div class="result-text">
+            <p>V zápase, kdy jsme chtěli potvrdit záchranu v soutěži, jsme soupeře do
+              moc šancí nepouštěli. První gól připravil Páleničkovi balónem do vápna
+              Martin Bartek. Potom, když potřeboval náš celek podržet, tak nadvakrát
+              zneškodnil Adam Juráň šanci soupeře.</p>
+            <p>To zvedlo psychiku celého týmu, aby následně jsme před poločase zvýšili
+              náskok na 2:0. Ve druhém poločase zkompletoval hattrick Páleníček, po akci
+              na ose Kostka-Menša-Páleníček.</p>
+            <p class="result-conclusion">Dokráčeli jsme si tak pro jasné tři body a potvrdili jsme jarní
+              neporazitelnost na domácí půdě. Abychom nezapomněli, tak Petr Páleníček
+              ukazuje, že i ve svém zlatém věku, zkompletovat hattrick dvakrát za sebou
+              po sobě jdoucích zápasech není pro něj žádný problém.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOTOGALERIE ───────────────────────────────────────── -->
+  <section id="fotogalerie" class="section-gallery">
+    <h2 class="russo section-heading">FOTOGALERIE</h2>
+    <div class="container-lg">
+      <div class="gallery-grid">
+        <a href="images/1.jpg" class="gallery-item" aria-label="Galerie — foto 1">
+          <img src="images/1.jpg" alt="FC Malenovice — foto 1" loading="lazy">
+        </a>
+        <a href="images/2.jpg" class="gallery-item" aria-label="Galerie — foto 2">
+          <img src="images/2.jpg" alt="FC Malenovice — foto 2" loading="lazy">
+        </a>
+        <a href="images/3.jpg" class="gallery-item" aria-label="Galerie — foto 3">
+          <img src="images/3.jpg" alt="FC Malenovice — foto 3" loading="lazy">
+        </a>
+        <a href="images/5.jpg" class="gallery-item" aria-label="Galerie — foto 5">
+          <img src="images/5.jpg" alt="FC Malenovice — foto 5" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TABULKA ───────────────────────────────────────────── -->
+  <section id="tabulka" class="section-table">
+    <h2 class="russo section-heading-dark">TABULKA</h2>
+    <div class="container-lg">
+      <div class="table-wrapper">
+        <div class="table-scroll">
+          <table class="standings-table">
+            <thead>
+              <tr>
+                <th class="russo th-rank">#</th>
+                <th class="russo th-name">Klub</th>
+                <th>Z</th>
+                <th>V</th>
+                <th>R</th>
+                <th>P</th>
+                <th>S</th>
+                <th>B</th>
+                <th class="th-pplus">P+</th>
+                <th class="th-pminus">P−</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-top">
+                <td class="td-rank">1.</td><td class="td-name">Fryšták</td>
+                <td>23</td><td class="td-v">20</td><td class="td-r">0</td><td class="td-p">3</td>
+                <td class="td-s">72</td><td class="td-b">59</td><td class="td-pp">3</td><td class="td-pm">2</td>
+              </tr>
+              <tr class="row-top">
+                <td class="td-rank">2.</td><td class="td-name">Mladcová</td>
+                <td>23</td><td class="td-v">17</td><td class="td-r">0</td><td class="td-p">6</td>
+                <td class="td-s">29</td><td class="td-b">51</td><td class="td-pp">2</td><td class="td-pm">2</td>
+              </tr>
+              <tr class="row-top">
+                <td class="td-rank">3.</td><td class="td-name">Tečovice</td>
+                <td>23</td><td class="td-v">16</td><td class="td-r">0</td><td class="td-p">7</td>
+                <td class="td-s">17</td><td class="td-b">46</td><td class="td-pp">3</td><td class="td-pm">1</td>
+              </tr>
+              <tr>
+                <td class="td-rank">4.</td><td class="td-name">Admira Hulín</td>
+                <td>23</td><td class="td-v">15</td><td class="td-r">0</td><td class="td-p">8</td>
+                <td class="td-s">9</td><td class="td-b">44</td><td class="td-pp">3</td><td class="td-pm">2</td>
+              </tr>
+              <tr>
+                <td class="td-rank">5.</td><td class="td-name">Holešov B</td>
+                <td>23</td><td class="td-v">13</td><td class="td-r">0</td><td class="td-p">10</td>
+                <td class="td-s">13</td><td class="td-b">38</td><td class="td-pp">2</td><td class="td-pm">1</td>
+              </tr>
+              <tr>
+                <td class="td-rank">6.</td><td class="td-name">Veselá</td>
+                <td>23</td><td class="td-v">12</td><td class="td-r">0</td><td class="td-p">11</td>
+                <td class="td-s">1</td><td class="td-b">37</td><td class="td-pp">0</td><td class="td-pm">1</td>
+              </tr>
+              <tr>
+                <td class="td-rank">7.</td><td class="td-name">Lužkovice</td>
+                <td>23</td><td class="td-v">10</td><td class="td-r">0</td><td class="td-p">13</td>
+                <td class="td-s">−2</td><td class="td-b">32</td><td class="td-pp">2</td><td class="td-pm">4</td>
+              </tr>
+              <tr>
+                <td class="td-rank">8.</td><td class="td-name">Jaroslavice</td>
+                <td>23</td><td class="td-v">10</td><td class="td-r">0</td><td class="td-p">13</td>
+                <td class="td-s">−4</td><td class="td-b">32</td><td class="td-pp">2</td><td class="td-pm">4</td>
+              </tr>
+              <tr>
+                <td class="td-rank">9.</td><td class="td-name">Chropyně</td>
+                <td>23</td><td class="td-v">12</td><td class="td-r">0</td><td class="td-p">11</td>
+                <td class="td-s">−15</td><td class="td-b">32</td><td class="td-pp">4</td><td class="td-pm">0</td>
+              </tr>
+              <tr class="row-self">
+                <td class="td-rank">10.</td><td class="td-name">Malenovice</td>
+                <td>23</td><td class="td-v">10</td><td class="td-r">0</td><td class="td-p">13</td>
+                <td class="td-s">−16</td><td class="td-b">30</td><td class="td-pp">2</td><td class="td-pm">2</td>
+              </tr>
+              <tr class="row-bottom">
+                <td class="td-rank">11.</td><td class="td-name">Příluky</td>
+                <td>23</td><td class="td-v">9</td><td class="td-r">0</td><td class="td-p">14</td>
+                <td class="td-s">−20</td><td class="td-b">25</td><td class="td-pp">3</td><td class="td-pm">1</td>
+              </tr>
+              <tr class="row-bottom">
+                <td class="td-rank">12.</td><td class="td-name">Louky</td>
+                <td>23</td><td class="td-v">7</td><td class="td-r">0</td><td class="td-p">16</td>
+                <td class="td-s">−11</td><td class="td-b">24</td><td class="td-pp">0</td><td class="td-pm">3</td>
+              </tr>
+              <tr class="row-bottom">
+                <td class="td-rank">13.</td><td class="td-name">Slavkov pH</td>
+                <td>23</td><td class="td-v">6</td><td class="td-r">0</td><td class="td-p">17</td>
+                <td class="td-s">−8</td><td class="td-b">20</td><td class="td-pp">0</td><td class="td-pm">2</td>
+              </tr>
+              <tr class="row-bottom">
+                <td class="td-rank">14.</td><td class="td-name">Kostelec u Hol</td>
+                <td>23</td><td class="td-v">4</td><td class="td-r">0</td><td class="td-p">19</td>
+                <td class="td-s">−65</td><td class="td-b">13</td><td class="td-pp">0</td><td class="td-pm">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── O KLUBU ───────────────────────────────────────────── -->
+  <section id="o-klubu" class="section-club">
+    <h2 class="russo section-heading">O KLUBU</h2>
+    <div class="container-md club-accordions">
+
+      <!-- Základní informace -->
+      <div class="accordion-wrap">
+        <details open>
+          <summary class="russo">ZÁKLADNÍ INFORMACE</summary>
+          <div class="accordion-body">
+            <ul class="info-list">
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Název klubu:</strong> Fotbalový klub Malenovice</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Adresa klubu:</strong> Tyršova, 763 02 Zlín 4</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Založení klubu:</strong> 1932</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Barvy klubu:</strong> modrá, bílá, červená</span></li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- Složení výboru -->
+      <div class="accordion-wrap">
+        <details open>
+          <summary class="russo">SLOŽENÍ VÝBORU FC MALENOVICE</summary>
+          <div class="accordion-body">
+            <ul class="committee-list">
+              <li><span class="committee-role">Trenér A mužstva</span> Ivo Malota</li>
+              <li><span class="committee-role">Trenér dorostu</span> Zdeněk Gistr</li>
+              <li><span class="committee-role">Trenér žáků</span> Radoslav Střelec</li>
+              <li><span class="committee-role">Trenér přípravky</span> Radoslav Střelec</li>
+              <li><span class="committee-role">Manažer a viceprezident</span> Vladislav Hamrla</li>
+              <li><span class="committee-role">Správce hřiště</span> František Zálešák</li>
+              <li><span class="committee-role">Hlavní rozhodčí</span> Petr Bůžek</li>
+              <li><span class="committee-role">Vedoucí klubu</span> Zdeněk Vichorec</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- Historie -->
+      <div class="accordion-wrap">
+        <details open>
+          <summary class="russo">HISTORIE</summary>
+          <div class="accordion-body">
+            <p class="history-text">První krok k založení fotbalového klubu v Malenovicích se
+              uskutečnil schůzí milovníků fotbalu v bývalém hostinci Podskalí,
+              který ležel pod hradem v roce 1932. Karel Mrlík, Jaroslav Plšek a
+              Vojtěch Číhal získali na ředitelství malenovického velkostatku
+              dohodu o pronájmu pozemku v cihelnách nad starým hřbitovem pro
+              provedení úprav na hřiště pro kopanou.</p>
+            <p class="history-text">Z příspěvků prvních členů se nakoupily dresy, a tak nově vzniklo
+              mužstvo, které nemělo ani vlastní hřiště, ale mohlo vyjíždět k
+              prvním přátelským utkáním do širokého okolí.</p>
+            <div class="original-lineup">
+              <span class="committee-role">Původní sestava</span>
+              <ul class="lineup-grid">
+                <li>Benešovský</li>
+                <li>Němec</li>
+                <li>Khýr</li>
+                <li>Číhal</li>
+                <li>Landsfeld</li>
+                <li>Jiřík ml.</li>
+                <li>Jiřík st.</li>
+                <li>Plšek</li>
+                <li>Strojil</li>
+                <li>Mrlík</li>
+                <li>Mal.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="russo footer-line">Created by Michal Zbranek</p>
+  <p class="russo footer-line">© 2025 All rights reserved</p>
+</footer>
+
+</body>
 </html>
